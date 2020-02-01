@@ -1,21 +1,26 @@
-<div class=container>
-
-<h1>{{title}}</h1>
 
 
-<div >
-
-<table class="table table-striped">
-  <tr><h1>{{finalOutput}}</h1></tr>
-  <tr><app-pluse (pluseEvent)="receivePluseOutput($event)" (countEvent)="receivePluseCount($event)" [pluseResult]="finalOutput" [countResult] ="finalCount"></app-pluse></tr>
-  <tr><app-minus (minusEvent)="receiveMinusOutput($event)" (countEvent)="receiveMinusCount($event)" [minusResult]="finalOutput" [countResult] ="finalCount"></app-minus></tr>
-  <tr><app-multiply  (multiplyEvent)="receiveMultiplyOutput($event)" (countEvent)="receiveMultiplyCount($event)" [multiplyResult]="finalOutput" [countResult] ="finalCount"></app-multiply></tr>
-  <tr><app-divide  (divideEvent)="receiveDivideOutput($event)" (countEvent)="receiveDivideCount($event)"  [divideResult]="finalOutput" [countResult] ="finalCount"></app-divide></tr>
-
-  <tr><h1>Count:</h1>
-  <h1>{{finalCount}}</h1></tr>
-
-  <tr><button class="btn btn-primary" (click)="ClearAll()" >ClearAll</button></tr>
-</table>
+<div class=" container background ">
+<div align="center">
+  <div class="row-xs-12"><h1 style="background-color:white  ; width: 800px;">{{title}}</h1></div>
+  <div class="row-x-12 box" style="background-color:lightgrey;"><h1>{{previousOutput}}{{operation}}{{value}}</h1></div>
+  <div class="row-x-12 box" style="background-color:lightgrey;"><h1>{{finalOutput}}</h1></div>
+</div>
+<div align="center">
+<div class ="row buttonBox" >
+  <div class="col-xs-3"><app-plus (plusEvent)="receivePlusOutput($event)" (countEvent)="receivePlusCount($event)" [plusResult]="finalOutput" [countResult] ="finalCount"></app-plus></div>
+  <div class="col-xs-3"><app-minus (minusEvent)="receiveMinusOutput($event)" (countEvent)="receiveMinusCount($event)" [minusResult]="finalOutput" [countResult] ="finalCount"></app-minus></div>
+  <div class="col-xs-3"><app-multiply   (countEvent)="receiveMultiplyCount($event)" (multiplyEvent)="receiveMultiplyOutput($event)" (previousMultiplyEvent)="receiveMultiplyPrevious($event)" [multiplyResult]="finalOutput" [countResult] ="finalCount"></app-multiply></div>
+  <div class="col-xs-3"><app-divide  (divideEvent)="receiveDivideOutput($event)" (countEvent)="receiveDivideCount($event)"  (previousDivideEvent)="receiveDividePrevious($event)" [divideResult]="finalOutput" [countResult] ="finalCount"></app-divide></div>
+</div>
+</div>
+ <div align ="center" >
+  <div class="row-xs-12"><h1  style="background-color:white;width: 800px;">Count</h1></div>
+  <div  class="row-xs-12 box " style="background-color:lightgrey;"><h1>{{finalCount}}</h1></div>
+ </div>
+<div align="center">
+  <div class="row"> <button class="btn btn-danger  btn-md active" (click)="ClearAll()" >ClearAll</button></div>
   </div>
 </div>
+
+

@@ -11,6 +11,7 @@ export class MinusComponent implements OnInit {
   @Input() countResult: number;
   @Output() minusEvent = new EventEmitter<number>();
   @Output() countEvent = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit() {

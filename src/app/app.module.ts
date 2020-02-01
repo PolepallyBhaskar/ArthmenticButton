@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MultiplyComponent } from './multiply/multiply.component';
-import { PluseComponent } from './pluse/pluse.component';
+import { PlusComponent } from './plus/plus.component';
 import { MinusComponent } from './minus/minus.component';
 import { DivideComponent } from './divide/divide.component';
 
@@ -11,7 +11,7 @@ import { DivideComponent } from './divide/divide.component';
   declarations: [
     AppComponent,
     MultiplyComponent,
-    PluseComponent,
+    PlusComponent,
     MinusComponent,
     DivideComponent
   ],
