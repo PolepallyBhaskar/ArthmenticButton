@@ -1,2 +1,4 @@
 
-<button class="btn btn-primary btn-md active" (click)="Divide()" >Divide</button>
+<button class="btn btn-primary btn-md active" style="height: 35px;width: 70px;"(click)="Divide()" >Divide</button><br>
+<input class ="box " #DivideInput type="number" placeholder ="Enter value "   ><br>
+<button class="btn btn-secondary btn-md active"  (click) ="onEnter(DivideInput.value)">Submit</button>

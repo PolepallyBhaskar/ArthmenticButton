@@ -1,2 +1,4 @@
 
-<button class="btn btn-primary btn-md active" (click)="Minus()" >Minus</button><br>
+<button class="btn btn-primary btn-md active" style="height: 35px;width: 70px;"(click)="Minus()" >Minus</button><br>
+<input class ="box " #MinusInput type="number" placeholder ="Enter value " ><br>
+<button class="btn btn-secondary btn-md active"  (click) ="onEnter(MinusInput.value)">Submit</button>

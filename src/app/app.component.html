@@ -1,26 +1,69 @@
 
 
-<div class=" container background ">
+<div class=" container background  " >
+
+
 <div align="center">
-  <div class="row-xs-12"><h1 style="background-color:white  ; width: 800px;">{{title}}</h1></div>
-  <div class="row-x-12 box" style="background-color:lightgrey;"><h1>{{previousOutput}}{{operation}}{{value}}</h1></div>
-  <div class="row-x-12 box" style="background-color:lightgrey;"><h1>{{finalOutput}}</h1></div>
+  <h4 align ="right">{{CurrentDate |date: 'fullDate'}}</h4>
+  <app-profile type ="button"> Sign In</app-profile>
+
+  <div class="row-xs-12"><h2 style="background-color:white  ; width: 800px;height: 50px; ">{{title}}</h2>
+
+  <div class="row-x-12 box" style="background-color:lightgrey;">
+  <h3>{{Calculation}}</h3>
+  <h2 appHighlight>{{previousOutput}}{{operation}}{{value}}</h2></div>
+  <div  class="row-x-12 box" style="background-color:lightgrey;">
+  <h3 >{{operationUsed}}</h3>
+  <h2 appHighlight>{{finalOutput}}</h2></div>
 </div>
 <div align="center">
-<div class ="row buttonBox" >
-  <div class="col-xs-3"><app-plus (plusEvent)="receivePlusOutput($event)" (countEvent)="receivePlusCount($event)" [plusResult]="finalOutput" [countResult] ="finalCount"></app-plus></div>
-  <div class="col-xs-3"><app-minus (minusEvent)="receiveMinusOutput($event)" (countEvent)="receiveMinusCount($event)" [minusResult]="finalOutput" [countResult] ="finalCount"></app-minus></div>
-  <div class="col-xs-3"><app-multiply   (countEvent)="receiveMultiplyCount($event)" (multiplyEvent)="receiveMultiplyOutput($event)" (previousMultiplyEvent)="receiveMultiplyPrevious($event)" [multiplyResult]="finalOutput" [countResult] ="finalCount"></app-multiply></div>
-  <div class="col-xs-3"><app-divide  (divideEvent)="receiveDivideOutput($event)" (countEvent)="receiveDivideCount($event)"  (previousDivideEvent)="receiveDividePrevious($event)" [divideResult]="finalOutput" [countResult] ="finalCount"></app-divide></div>
+<div class ="row rowsetup" >
+  <div class="col-xs-3"><app-plus
+                                  (plusEvent)="receivePlusOutput($event)"
+                                  (countEvent)="receivePlusCount($event)"
+                                  (previousPlusEvent)="receivePlusPrevious($event)"
+                                  (inputAddedEvent)="inputAddedValue($event)"
+                                  (operationEvent) = "operationDone($event)"
+                                  [plusResult]="finalOutput"
+                                  [countResult] ="finalCount" ></app-plus></div>
+  <div class="col-xs-3"><app-minus
+                                   (minusEvent)="receiveMinusOutput($event)"
+                                   (countEvent)="receiveMinusCount($event)"
+                                   (previousMinusEvent)="receiveMinusPrevious($event)"
+                                   (inputMinusEvent)="inputMinusValue($event)"
+                                   (operationEvent) = "operationDone($event)"
+                                   [minusResult]="finalOutput"
+                                   [countResult] ="finalCount"  ></app-minus></div>
+  <div class="col-xs-3"><app-multiply
+                                   (countEvent)="receiveMultiplyCount($event)"
+                                   (multiplyEvent)="receiveMultiplyOutput($event)"
+                                   (previousMultiplyEvent)="receiveMultiplyPrevious($event)"
+                                   (inputMultiplyEvent)="inputMultiplyValue($event)"
+                                   (operationEvent) = "operationDone($event)"
+                                   [multiplyResult]="finalOutput"
+                                   [countResult] ="finalCount" ></app-multiply></div>
+  <div class="col-xs-3"><app-divide
+                                   (divideEvent)="receiveDivideOutput($event)"
+                                   (countEvent)="receiveDivideCount($event)"
+                                   (previousDivideEvent)="receiveDividePrevious($event)"
+                                   (inputDivideEvent)="inputDivideValue($event)"
+                                   (operationEvent) = "operationDone($event)"
+                                   [divideResult]="finalOutput"
+                                   [countResult] ="finalCount"></app-divide></div>
 </div>
-</div>
+
  <div align ="center" >
-  <div class="row-xs-12"><h1  style="background-color:white;width: 800px;">Count</h1></div>
-  <div  class="row-xs-12 box " style="background-color:lightgrey;"><h1>{{finalCount}}</h1></div>
+  <div class="row-12"><h3  style="background-color:white;width: 800px;height: 50px; padding-top: 10px;padding-bottom: 10px;">Count(Result / 5)</h3></div>
+  <div  class="row-xs-12 box " style="background-color:lightgrey;"><h1 appHighlight>{{finalCount}}</h1></div>
  </div>
-<div align="center">
-  <div class="row"> <button class="btn btn-danger  btn-md active" (click)="ClearAll()" >ClearAll</button></div>
-  </div>
+  <div class="row " style="padding-left: 530px;"> <button class="btn btn-danger  btn-md active" (click)="ClearAll()" >ClearAll</button></div>
+
 </div>
+</div>
+
+
+
+
+
 
 

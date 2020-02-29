@@ -1,2 +1,4 @@
 
-<button class="btn btn-primary btn-md active" (click)="Multiply()" >Multiply</button><br>
+<button class="btn btn-primary btn-md active" style="height: 35px;width: 70px;" (click)="Multiply()" >Multiply</button><br>
+<input class ="box " #MultiplyInput type="number" placeholder ="Enter value " ><br>
+<button class="btn btn-secondary btn-md active" (click) ="onEnter(MultiplyInput.value)">Submit</button>

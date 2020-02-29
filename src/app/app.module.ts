@@ -1,11 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {ReactiveFormsModule} from '@angular/forms';
+
+
+
+
 
 import { AppComponent } from './app.component';
 import { MultiplyComponent } from './multiply/multiply.component';
 import { PlusComponent } from './plus/plus.component';
 import { MinusComponent } from './minus/minus.component';
 import { DivideComponent } from './divide/divide.component';
+import { HighlightDirective } from './highlight.directive';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -13,14 +20,22 @@ import { DivideComponent } from './divide/divide.component';
     MultiplyComponent,
     PlusComponent,
     MinusComponent,
-    DivideComponent
+    DivideComponent,
+    HighlightDirective,
+    ProfileComponent,
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
+
+
+
   ],
 
 
-  providers: [],
+
+
   bootstrap: [AppComponent]
 })
 export class AppModule {
